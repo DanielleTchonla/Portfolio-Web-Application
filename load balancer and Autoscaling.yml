@@ -223,6 +223,3 @@ Outputs:
     Value: !Ref KeyName
     Export:
       Name: !Sub '${AWS::StackName}-KeyName'
-  SNSTopicArn:
-    Value: !Ref MySNSTopic
-    Description: "ARN of the created SNS topic"
