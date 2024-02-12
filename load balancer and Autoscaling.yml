@@ -7,7 +7,7 @@ Parameters:
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instances
     Type: 'AWS::EC2::KeyPair::KeyName'
     ConstraintDescription: must be the name of an existing EC2 KeyPair.
-    Default: 'virginia'
+    Default: #'YOUR KEY NAME'
 
 Resources:
   LoadBalancer:
@@ -77,7 +77,7 @@ Resources:
     Properties:
       LaunchTemplateName: LaunchTemplate
       LaunchTemplateData:
-        ImageId: 'ami-0005e0cfe09cc9050'
+        ImageId: # add the EC2 Image ID
         InstanceType: t2.micro
         KeyName: !Ref KeyName
         SecurityGroupIds:
@@ -127,7 +127,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
-          CidrIp: 69.181.48.253/32
+          CidrIp: your IP or your org IP
         - IpProtocol: tcp
           FromPort: 80
           ToPort: 80
@@ -170,7 +170,7 @@ Resources:
     Type: AWS::SNS::Topic
     Properties: 
       Subscription: 
-        - Endpoint: d.tchonla@gmail.com
+        - Endpoint: #your email address
           Protocol: email 
       TopicName: App-Topic
       Tags: 
